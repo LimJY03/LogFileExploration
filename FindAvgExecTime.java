@@ -1,8 +1,5 @@
 // Import necessary dependencies
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -22,7 +19,8 @@ public class FindAvgExecTime {
         
         try{
 
-            BufferedReader file = new BufferedReader(new FileReader("./data/extracted_log"));
+            BufferedReader fileIn = new BufferedReader(new FileReader("./data/extracted_log"));
+            PrintWriter fileOut = new PrintWriter(new FileWriter("./output/average_exec_time.txt"));
 
             ArrayList<Integer> uniqueJobID = new ArrayList<>();
             ArrayList<String> startJobIdLines = new ArrayList<>();
@@ -38,7 +36,7 @@ public class FindAvgExecTime {
             String line;
 
             // Get unique IDs
-            while ((line = file.readLine()) != null) {
+            while ((line = fileIn.readLine()) != null) {
                 
                 if (line.contains("sched:") || line.contains("sched/backfill:")) {
                     
@@ -105,14 +103,14 @@ public class FindAvgExecTime {
                 long totalMinutes = totalSeconds / 60;
                 long totalHours = totalMinutes / 60;
 
-                System.out.printf(
-                    "Average Execution Time: %s hours %s minutes %s seconds %s milliseconds\n", 
+                fileOut.printf(
+                    "Average Execution Time:\n%s hours %s minutes %s seconds %s milliseconds\n", 
                     totalHours % 24, totalMinutes % 60, totalSeconds % 60, totalMilliseconds % 1000
                 );
             }
             
-            file.close();
-
+            fileIn.close();
+            fileOut.close();
         } 
         catch (FileNotFoundException e) { System.out.println("File was not found."); } 
         catch (IOException e) { System.out.println("Error read from file."); }    

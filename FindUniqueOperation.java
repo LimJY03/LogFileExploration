@@ -15,7 +15,7 @@ public class FindUniqueOperation {
 
             // Read file
             BufferedReader fileIn = new BufferedReader(new FileReader("./data/extracted_log"));
-            PrintWriter fileOut = new PrintWriter(new FileWriter("./data/job_type.txt"));
+            PrintWriter fileOut = new PrintWriter(new FileWriter("./output/job_type.txt"));
 
             // Variable declarations
             LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
