@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class NumJob {
+public class FindAvgExecTime {
     
     public static void main(String[] args) {        
         avgExecutionTime();
