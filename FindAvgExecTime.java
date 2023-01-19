@@ -15,7 +15,7 @@ public class FindAvgExecTime {
     }
 
     // Average execution time of the jobs submitted to UMHPC.
-    public static void avgExecutionTime(){
+    public static void avgExecutionTime() {
         
         try{
 
