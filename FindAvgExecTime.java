@@ -9,19 +9,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FindAvgExecTime {
-    
-    public static void main(String[] args) {        
-        avgExecutionTime();
+
+    private ArrayList<Long> arr = new ArrayList<>();
+
+    public static void main(String[] args) {
+        new FindAvgExecTime().exec();
     }
 
-    // Average execution time of the jobs submitted to UMHPC.
-    public static void avgExecutionTime() {
-        
+    public ArrayList<Long> getTimeArr() { 
+        this.exec(); 
+        return this.arr; 
+    }
+
+    public String formatTime(long timeMs) {
+        long timeSeconds = timeMs / 1000;
+        long timeMinutes = timeSeconds / 60;
+        long timeHours = timeMinutes / 60;
+        return String.format("%s hours %s minutes %s seconds %s milliseconds\n", timeHours, timeMinutes % 60, timeSeconds % 60, timeMs % 1000);
+    }
+
+    private void exec() {
         try{
-
             BufferedReader fileIn = new BufferedReader(new FileReader("./data/extracted_log"));
-            PrintWriter fileOut = new PrintWriter(new FileWriter("./output/average_exec_time.txt"));
-
+            PrintWriter fileOut = new PrintWriter(new FileWriter("./stats/average_exec_time.txt"));
+            
             ArrayList<Integer> uniqueJobID = new ArrayList<>();
             ArrayList<String> startJobIdLines = new ArrayList<>();
             ArrayList<String> endJobIdLines = new ArrayList<>();
@@ -31,7 +42,7 @@ public class FindAvgExecTime {
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
             
-            int jobCount = 0;
+            int completedJobCount = 0;
             long totalDuration = 0;            
             String line;
 
@@ -87,25 +98,21 @@ public class FindAvgExecTime {
                             timeMatcher = timePattern.matcher(endJobIdLine);
                             if (timeMatcher.find()) { endTime = LocalDateTime.parse(timeMatcher.group(1), formatter); }
                             
-                            totalDuration += java.time.Duration.between(startTime, endTime).toMillis();
+                            long duration = java.time.Duration.between(startTime, endTime).toMillis();
+                            totalDuration += duration;
+                            this.arr.add(duration);
 
-                            jobCount++;                            
+                            completedJobCount++;                            
                             break;
                         }
                     }                 
                 }
             }               
             
-            if (jobCount > 0) {
-
-                long totalMilliseconds = totalDuration / jobCount;
-                long totalSeconds = totalMilliseconds / 1000;
-                long totalMinutes = totalSeconds / 60;
-                long totalHours = totalMinutes / 60;
-
+            if (completedJobCount > 0) {
                 fileOut.printf(
-                    "Average Execution Time:\n%s hours %s minutes %s seconds %s milliseconds\n", 
-                    totalHours % 24, totalMinutes % 60, totalSeconds % 60, totalMilliseconds % 1000
+                    "Average Execution Time:\n%s\nTotal Jobs Completed: %s", 
+                    this.formatTime(totalDuration / completedJobCount), completedJobCount
                 );
             }
             
@@ -113,6 +120,6 @@ public class FindAvgExecTime {
             fileOut.close();
         } 
         catch (FileNotFoundException e) { System.out.println("File was not found."); } 
-        catch (IOException e) { System.out.println("Error read from file."); }    
+        catch (IOException e) { System.out.println("Error read from file."); }            
     }
 }
