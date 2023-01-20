@@ -1,0 +1,6 @@
+cpu-opteron: 4920
+cpu-epyc: 3015
+gpu-k10: 439
+gpu-k40c: 301
+gpu-titan: 673
+gpu-v100s: 618
