@@ -14,7 +14,7 @@ public class FindJobExecTimeStats {
             
         try {
             BufferedReader fileIn = new BufferedReader(new FileReader("./output/time_raw.txt"));
-            PrintWriter fileOut = new PrintWriter(new FileWriter("./stats/exec_time_stats.txt"));             
+            PrintWriter fileOut = new PrintWriter(new FileWriter("./stats/exec_time_stats.txt"), true);             
             while ((line = fileIn.readLine()) != null) { timeArr.add(Long.parseLong(line)); }            
             Collections.sort(timeArr);
             fileOut.println("Execution Time Stats\n=============================================================");           

@@ -17,7 +17,7 @@ public class FindPartitionStats {
         try{
             
             Scanner inputStream = new Scanner(new FileInputStream("./data_filtered/start_job.txt"));
-            PrintWriter outputStream = new PrintWriter(new FileOutputStream("./stats/partition_stats.txt"));
+            PrintWriter outputStream = new PrintWriter(new FileOutputStream("./stats/partition_stats.txt"), true);
 
             int cpuOpteronCount = 0, cpuEpycCount = 0, gpuK10Count = 0, gpuK40cCount = 0, gpuTitanCount = 0, gpuV100sCount = 0;
 
