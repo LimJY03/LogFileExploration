@@ -1,11 +1,6 @@
 // Import necessary dependencies
 import java.io.*;
-
-import java.util.Collections;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
 public class FindUniqueOperation {
     
@@ -29,7 +24,7 @@ public class FindUniqueOperation {
             }
 
             // Sort keywords by descending and write to file
-            map = sortDescending(map);
+            map = new CommonOps().sortDescending(map);
             map.forEach((keyword, count) -> fileOut.printf("%s: %d\n", keyword, count));
 
             // Close file
@@ -38,16 +33,5 @@ public class FindUniqueOperation {
         }
         catch (FileNotFoundException e) {System.out.println("File Not Found!");}
         catch (IOException e) { System.out.printf("IO Exception: %s\n", e); }
-    }
-
-    public static LinkedHashMap<String, Integer> sortDescending(LinkedHashMap<String, Integer> dict) {
-
-        List<Map.Entry<String, Integer>> list = new LinkedList<>(dict.entrySet());
-        Collections.sort(list, (map1, map2) -> map2.getValue().compareTo(map1.getValue()));
-        
-        LinkedHashMap<String, Integer> newDict = new LinkedHashMap<>();
-        for (Map.Entry<String, Integer> map: list) { newDict.put(map.getKey(), map.getValue()); }
-
-        return newDict;
     }
 }
