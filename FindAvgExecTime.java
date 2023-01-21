@@ -21,13 +21,6 @@ public class FindAvgExecTime {
         return this.arr; 
     }
 
-    public String formatTime(long timeMs) {
-        long timeSeconds = timeMs / 1000;
-        long timeMinutes = timeSeconds / 60;
-        long timeHours = timeMinutes / 60;
-        return String.format("%s hours %s minutes %s seconds %s milliseconds\n", timeHours, timeMinutes % 60, timeSeconds % 60, timeMs % 1000);
-    }
-
     private void exec() {
         try{
             BufferedReader fileIn = new BufferedReader(new FileReader("./data/extracted_log"));
@@ -112,7 +105,7 @@ public class FindAvgExecTime {
             if (completedJobCount > 0) {
                 fileOut.printf(
                     "Average Execution Time:\n%s\nTotal Jobs Completed: %s", 
-                    this.formatTime(totalDuration / completedJobCount), completedJobCount
+                    new CommonOps().formatTime(totalDuration / completedJobCount), completedJobCount
                 );
             }
             
