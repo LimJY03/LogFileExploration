@@ -1,5 +1,6 @@
 // Import necessary dependencies
 import java.io.*;
+import java.nio.file.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -10,25 +11,19 @@ import java.util.regex.Pattern;
 
 public class FindAvgExecTime {
 
-    private ArrayList<Long> arr = new ArrayList<>();
-
-    public static void main(String[] args) {
-        new FindAvgExecTime().exec();
-    }
-
-    public ArrayList<Long> getTimeArr() { 
-        this.exec(); 
-        return this.arr; 
-    }
+    public static void main(String[] args) { new FindAvgExecTime().exec(); }
 
     private void exec() {
+
         try{
-            BufferedReader fileIn = new BufferedReader(new FileReader("./data/extracted_log"));
-            PrintWriter fileOut = new PrintWriter(new FileWriter("./stats/average_exec_time.txt"));
+            
+            BufferedReader startFile = new BufferedReader(new FileReader("./data_filtered/start_job.txt"));
+            PrintWriter fileOut = new PrintWriter(new FileWriter("./stats/average_exec_time.txt"), true);
+            PrintWriter timeRawOut = new PrintWriter(new FileWriter("./output/time_raw.txt"), true);
             
             ArrayList<Integer> uniqueJobID = new ArrayList<>();
             ArrayList<String> startJobIdLines = new ArrayList<>();
-            ArrayList<String> endJobIdLines = new ArrayList<>();
+            ArrayList<String> endJobIdLines = new ArrayList<>(Files.readAllLines(Paths.get("./data_filtered/end_job.txt")));
             
             Pattern jobIdPattern = Pattern.compile("JobId=(\\d+)");
             Pattern timePattern = Pattern.compile("(\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d.\\d\\d\\d)");  
@@ -40,29 +35,17 @@ public class FindAvgExecTime {
             String line;
 
             // Get unique IDs
-            while ((line = fileIn.readLine()) != null) {
-                
-                if (line.contains("sched:") || line.contains("sched/backfill:")) {
+            while ((line = startFile.readLine()) != null) {
                     
-                    Matcher jobIdMatcher = jobIdPattern.matcher(line);
+                Matcher jobIdMatcher = jobIdPattern.matcher(line);
 
-                    if (jobIdMatcher.find()) {
+                if (jobIdMatcher.find()) {
 
-                        int id = Integer.parseInt(jobIdMatcher.group(1));
+                    int id = Integer.parseInt(jobIdMatcher.group(1));
 
-                        if (!uniqueJobID.contains(id)) {
-                            uniqueJobID.add(id);
-                            startJobIdLines.add(line);
-                        }
-                    }
-                }
-
-                if (line.contains("done")) {
-
-                    Matcher jobIdMatcher = jobIdPattern.matcher(line);
-
-                    if (jobIdMatcher.find()) {
-                        endJobIdLines.add(line);
+                    if (!uniqueJobID.contains(id)) {
+                        uniqueJobID.add(id);
+                        startJobIdLines.add(line);
                     }
                 }
             }
@@ -93,7 +76,7 @@ public class FindAvgExecTime {
                             
                             long duration = java.time.Duration.between(startTime, endTime).toMillis();
                             totalDuration += duration;
-                            this.arr.add(duration);
+                            timeRawOut.println(duration);
 
                             completedJobCount++;                            
                             break;
@@ -109,8 +92,9 @@ public class FindAvgExecTime {
                 );
             }
             
-            fileIn.close();
+            startFile.close();
             fileOut.close();
+            timeRawOut.close();
         } 
         catch (FileNotFoundException e) { System.out.println("File was not found."); } 
         catch (IOException e) { System.out.println("Error read from file."); }            
