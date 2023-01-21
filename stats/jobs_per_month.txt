@@ -1,0 +1,7 @@
+Jun: 2368 started, 1893 ended
+Jul: 1365 started, 1139 ended
+Aug: 1603 started, 1186 ended
+Sep: 1400 started, 1153 ended
+Oct: 1847 started, 1564 ended
+Nov: 1378 started, 1092 ended
+Dec: 668 started, 452 ended
