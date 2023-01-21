@@ -2,7 +2,6 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 import java.util.Scanner;
@@ -64,6 +63,5 @@ public class FindPartitionStats {
             outputStream.close();
         }
         catch (FileNotFoundException e) { System.out.println("File was not found"); }
-        catch (IOException e) { System.out.println("Problem with file output"); }
     }
 }
