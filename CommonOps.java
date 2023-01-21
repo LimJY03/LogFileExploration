@@ -17,4 +17,11 @@ public class CommonOps {
 
         return newDict;
     }
+
+    public String formatTime(long timeMs) {
+        long timeSeconds = timeMs / 1000;
+        long timeMinutes = timeSeconds / 60;
+        long timeHours = timeMinutes / 60;
+        return String.format("%s hours %s minutes %s seconds %s milliseconds\n", timeHours, timeMinutes % 60, timeSeconds % 60, timeMs % 1000);
+    }
 }
