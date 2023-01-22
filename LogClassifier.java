@@ -25,7 +25,7 @@ public class LogClassifier {
                 // Start reading log
                 if (line.substring(0, 11).equals(this.dateStart) || started) {
                     started = true;
-                    if (line.contains("sched:") || line.contains("sched/backfill:")) { fileOut_startJob.println(line); }
+                    if (line.contains("sched: Allocate") || line.contains("sched/backfill:")) { fileOut_startJob.println(line); }
                     else if (line.contains("done")) { fileOut_endJob.println(line); }
                     else if (line.toLowerCase().contains("kill")) { fileOut_killJob.println(line); }
                     else if (line.contains("error: This association")) { fileOut_error.println(line); }
