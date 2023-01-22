@@ -1,0 +1,7 @@
+Jun: 596 job kill(s) requested, 0 job kill(s) failed
+Jul: 310 job kill(s) requested, 0 job kill(s) failed
+Aug: 414 job kill(s) requested, 1 job kill(s) failed
+Sep: 230 job kill(s) requested, 0 job kill(s) failed
+Oct: 306 job kill(s) requested, 0 job kill(s) failed
+Nov: 306 job kill(s) requested, 1 job kill(s) failed
+Dec: 218 job kill(s) requested, 0 job kill(s) failed
