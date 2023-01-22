@@ -25,7 +25,7 @@ public class LogClassifier {
                     this.started = true;
                     if (line.contains("sched:") || line.contains("sched/backfill:")) { fileOut_startJob.println(line); }
                     else if (line.contains("done")) { fileOut_endJob.println(line); }
-                    else if (line.contains("_slurm_rpc_kill_job:")) { fileOut_killJob.println(line); }
+                    else if (line.toLowerCase().contains("kill")) { fileOut_killJob.println(line); }
                     else if (line.contains("error: This association")) { fileOut_error.println(line); }
                 }
 
