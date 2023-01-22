@@ -77,9 +77,9 @@ public class FindAvgExecTime {
                     totalDuration += duration;
                     completedJobCount++;  
 
-                    String node;
-                    if (startJobIdLines.get(key).contains("Partition=")) { node = startJobIdLines.get(key).split("Partition=")[1]; } 
-                    else { node = startJobIdLines.get(key).split("in ")[1].split(" on")[0]; }
+                    String node = "", log = startJobIdLines.get(key);
+                    if (log.contains("Partition=")) { node = log.split("Partition=")[1]; } 
+                    else if (log.contains("_start_job:")) { node = log.split("in ")[1].split(" on")[0]; }
                     
                     timeRawOut.printf("%s %s %s\n", key, duration, node);
                 }
