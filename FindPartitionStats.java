@@ -10,7 +10,7 @@ public class FindPartitionStats {
     
     public static void main(String[] args) { new FindPartitionStats().exec(); } 
 
-    private void exec() {
+    public void exec() {
 
         String line;
 
