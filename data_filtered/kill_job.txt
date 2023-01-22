@@ -15,6 +15,7 @@
 [2022-06-01T15:20:49.670] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42843 uid 548300556
 [2022-06-01T15:29:03.744] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42857 uid 548300570
 [2022-06-01T15:31:27.874] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42804 uid 548300563
+[2022-06-01T15:31:27.874] error: Security violation, REQUEST_KILL_JOB RPC for JobId=42804 from uid 548300563
 [2022-06-01T15:31:27.874] _slurm_rpc_kill_job: job_str_signal() uid=548300563 JobId=42804 sig=9 returned: Access/permission denied
 [2022-06-01T15:33:40.532] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42868 uid 548300569
 [2022-06-01T20:09:53.546] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42883 uid 548300557
@@ -40,6 +41,7 @@
 [2022-06-04T20:13:51.393] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42951 uid 548200083
 [2022-06-05T09:18:28.820] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=43021 uid 548300504
 [2022-06-05T09:18:49.898] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=43012 uid 548300504
+[2022-06-05T09:18:49.898] error: Security violation, REQUEST_KILL_JOB RPC for JobId=43012 from uid 548300504
 [2022-06-05T09:18:49.898] _slurm_rpc_kill_job: job_str_signal() uid=548300504 JobId=43012 sig=9 returned: Access/permission denied
 [2022-06-05T12:54:16.541] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=43022 uid 548300561
 [2022-06-05T12:58:56.456] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=43023 uid 548300561
@@ -51,6 +53,7 @@
 [2022-06-06T06:36:05.204] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42952 uid 548200083
 [2022-06-06T06:36:11.055] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42952 uid 548200083
 [2022-06-06T06:39:33.638] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=42957 uid 548200083
+[2022-06-06T06:39:33.638] error: Security violation, REQUEST_KILL_JOB RPC for JobId=42957 from uid 548200083
 [2022-06-06T06:39:33.638] _slurm_rpc_kill_job: job_str_signal() uid=548200083 JobId=42957 sig=9 returned: Access/permission denied
 [2022-06-06T10:02:53.544] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=43064 uid 548200029
 [2022-06-06T14:59:32.020] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=43084 uid 548200019
@@ -744,6 +747,7 @@
 [2022-07-11T22:47:46.474] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46150 uid 548200021
 [2022-07-11T23:11:40.550] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46152 uid 548200021
 [2022-07-12T00:20:12.600] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=45817 uid 548300504
+[2022-07-12T00:20:12.600] error: Security violation, REQUEST_KILL_JOB RPC for JobId=45817 from uid 548300504
 [2022-07-12T00:20:12.600] _slurm_rpc_kill_job: job_str_signal() uid=548300504 JobId=45817 sig=9 returned: Access/permission denied
 [2022-07-12T00:20:25.951] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46155 uid 548300504
 [2022-07-12T00:23:34.196] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46157 uid 548300504
@@ -764,6 +768,7 @@
 [2022-07-12T00:57:41.856] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46166 uid 548300504
 [2022-07-12T00:57:41.856] _slurm_rpc_kill_job: job_str_signal() uid=548300504 JobId=46166 sig=9 returned: Invalid job id specified
 [2022-07-12T00:57:49.711] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=45817 uid 548300504
+[2022-07-12T00:57:49.711] error: Security violation, REQUEST_KILL_JOB RPC for JobId=45817 from uid 548300504
 [2022-07-12T00:57:49.711] _slurm_rpc_kill_job: job_str_signal() uid=548300504 JobId=45817 sig=9 returned: Access/permission denied
 [2022-07-12T00:57:58.058] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46165 uid 548300504
 [2022-07-12T00:57:58.058] _slurm_rpc_kill_job: job_str_signal() uid=548300504 JobId=46165 sig=9 returned: Invalid job id specified
@@ -796,6 +801,7 @@
 [2022-07-12T00:58:43.805] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46152 uid 548300504
 [2022-07-12T00:58:43.805] _slurm_rpc_kill_job: job_str_signal() uid=548300504 JobId=46152 sig=9 returned: Invalid job id specified
 [2022-07-12T00:58:48.479] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46151 uid 548300504
+[2022-07-12T00:58:48.479] error: Security violation, REQUEST_KILL_JOB RPC for JobId=46151 from uid 548300504
 [2022-07-12T00:58:48.479] _slurm_rpc_kill_job: job_str_signal() uid=548300504 JobId=46151 sig=9 returned: Access/permission denied
 [2022-07-12T01:06:05.362] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46173 uid 548300504
 [2022-07-12T09:10:48.492] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46176 uid 548300504
@@ -900,6 +906,7 @@
 [2022-07-27T14:51:54.377] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46784 uid 548200019
 [2022-07-27T23:01:29.242] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46800 uid 548200021
 [2022-07-27T23:01:37.684] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46799 uid 548200021
+[2022-07-27T23:01:37.684] error: Security violation, REQUEST_KILL_JOB RPC for JobId=46799 from uid 548200021
 [2022-07-27T23:01:37.684] _slurm_rpc_kill_job: job_str_signal() uid=548200021 JobId=46799 sig=9 returned: Access/permission denied
 [2022-07-27T23:02:19.399] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46762 uid 548200021
 [2022-07-27T23:49:20.716] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=46806 uid 548200019
@@ -1297,6 +1304,8 @@
 [2022-08-23T10:08:49.553] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=48271 uid 548200003
 [2022-08-23T19:36:11.143] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=48295 uid 548300534
 [2022-08-23T19:36:17.589] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=48294 uid 548300534
+[2022-08-23T19:39:42.004] update_node: node cpu12 reason set to: Kill task failed
+[2022-08-23T19:39:42.005] error: slurmd error running JobId=48294 on node(s)=cpu12: Kill task failed
 [2022-08-23T19:41:54.438] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=48297 uid 548300534
 [2022-08-23T19:42:44.438] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=48298 uid 548300534
 [2022-08-24T14:40:37.747] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=48308 uid 548300543
@@ -1860,6 +1869,7 @@
 [2022-10-28T22:36:03.534] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=51643 uid 548200017
 [2022-10-28T22:38:34.071] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=51644 uid 548200017
 [2022-10-28T23:05:13.300] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=51753 uid 548200021
+[2022-10-28T23:05:13.300] error: Security violation, REQUEST_KILL_JOB RPC for JobId=51753 from uid 548200021
 [2022-10-28T23:05:13.300] _slurm_rpc_kill_job: job_str_signal() uid=548200021 JobId=51753 sig=9 returned: Access/permission denied
 [2022-10-28T23:05:27.203] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=51739 uid 548200021
 [2022-10-28T23:06:06.067] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=51757 uid 548200021
@@ -2011,6 +2021,7 @@
 [2022-11-10T13:05:56.251] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52422 uid 548300630
 [2022-11-10T13:21:08.473] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52424 uid 548300630
 [2022-11-10T13:25:28.767] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52223 uid 548300621
+[2022-11-10T13:25:28.767] error: Security violation, REQUEST_KILL_JOB RPC for JobId=52223 from uid 548300621
 [2022-11-10T13:25:28.767] _slurm_rpc_kill_job: job_str_signal() uid=548300621 JobId=52223 sig=9 returned: Access/permission denied
 [2022-11-10T13:27:53.719] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52423 uid 548300630
 [2022-11-10T13:40:46.561] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52435 uid 548200121
@@ -2125,8 +2136,10 @@
 [2022-11-21T10:59:56.899] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52920 uid 548300593
 [2022-11-21T18:33:48.791] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52981 uid 548200021
 [2022-11-22T11:25:18.852] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52908 uid 548300543
+[2022-11-22T11:25:18.853] error: Security violation, REQUEST_KILL_JOB RPC for JobId=52908 from uid 548300543
 [2022-11-22T11:25:18.853] _slurm_rpc_kill_job: job_str_signal() uid=548300543 JobId=52908 sig=9 returned: Access/permission denied
 [2022-11-22T11:25:57.809] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52908 uid 548300543
+[2022-11-22T11:25:57.809] error: Security violation, REQUEST_KILL_JOB RPC for JobId=52908 from uid 548300543
 [2022-11-22T11:25:57.809] _slurm_rpc_kill_job: job_str_signal() uid=548300543 JobId=52908 sig=9 returned: Access/permission denied
 [2022-11-22T11:30:57.877] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52908 uid 548300543
 [2022-11-22T11:31:24.222] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=52909 uid 548300543
@@ -2169,6 +2182,8 @@
 [2022-11-27T09:13:28.014] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53190 uid 548300630
 [2022-11-27T20:07:01.332] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53192 uid 548300630
 [2022-11-28T08:22:37.548] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53186 uid 548200017
+[2022-11-28T08:27:38.005] update_node: node cpu14 reason set to: Kill task failed
+[2022-11-28T08:27:38.005] error: slurmd error running JobId=53186 on node(s)=cpu14: Kill task failed
 [2022-11-28T08:41:10.147] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53187 uid 548200017
 [2022-11-28T09:05:55.145] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53197 uid 548200017
 [2022-11-28T09:05:55.145] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53198 uid 548200017
@@ -2209,6 +2224,7 @@
 [2022-12-01T19:28:22.467] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53365 uid 548300621
 [2022-12-02T08:47:15.726] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53369 uid 548300557
 [2022-12-02T09:26:33.147] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53367 uid 548300642
+[2022-12-02T09:26:45.710] Killing interactive JobId=53373: Communication connection failure
 [2022-12-02T09:27:28.236] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53374 uid 548300642
 [2022-12-02T10:29:46.050] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53377 uid 548200021
 [2022-12-02T11:15:45.203] _slurm_rpc_kill_job: REQUEST_KILL_JOB JobId=53378 uid 548200021
