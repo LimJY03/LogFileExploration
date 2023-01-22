@@ -6,6 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class CommonOps {
+
+    public static void main(String[] args) {
+        System.out.println(new CommonOps().formatTime(7392140));
+    }
     
     public LinkedHashMap<String, Integer> sortDescending(LinkedHashMap<String, Integer> dict) {
 
