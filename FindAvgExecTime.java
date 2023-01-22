@@ -75,9 +75,13 @@ public class FindAvgExecTime {
                     
                     long duration = java.time.Duration.between(startTime, endTime).toMillis();
                     totalDuration += duration;
-                    timeRawOut.println(duration);
-    
                     completedJobCount++;  
+
+                    String node;
+                    if (startJobIdLines.get(key).contains("Partition=")) { node = startJobIdLines.get(key).split("Partition=")[1]; } 
+                    else { node = startJobIdLines.get(key).split("in ")[1].split(" on")[0]; }
+                    
+                    timeRawOut.printf("%s %s %s\n", key, duration, node);
                 }
             }
 
