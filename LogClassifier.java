@@ -3,14 +3,16 @@ import java.io.*;
 
 public class LogClassifier {
 
-    private String dateStart = "[2022-06-01", dateEnd = "[2022-12-17";
-    private boolean started = false, onEndDay = false;
+    private String dateStart = "[2022-06-01";
+    private String dateEnd = "[2022-12-17";
 
     public static void main(String[] args) { new LogClassifier().exec(); }
 
     public void exec() {
 
         String line;
+        boolean started = false, onEndDay = false;
+
         try {
             BufferedReader fileIn = new BufferedReader(new FileReader("./data/extracted_log"));
             PrintWriter fileOut_startJob = new PrintWriter(new FileWriter("./data_filtered/start_job.txt"), true);
@@ -21,8 +23,8 @@ public class LogClassifier {
             while ((line = fileIn.readLine()) != null) {
 
                 // Start reading log
-                if (line.substring(0, 11).equals(this.dateStart) || this.started) {
-                    this.started = true;
+                if (line.substring(0, 11).equals(this.dateStart) || started) {
+                    started = true;
                     if (line.contains("sched:") || line.contains("sched/backfill:")) { fileOut_startJob.println(line); }
                     else if (line.contains("done")) { fileOut_endJob.println(line); }
                     else if (line.toLowerCase().contains("kill")) { fileOut_killJob.println(line); }
@@ -30,8 +32,8 @@ public class LogClassifier {
                 }
 
                 // Check if can stop reading log
-                if (line.substring(0, 11).equals(this.dateEnd)) { this.onEndDay = true; }
-                else if (!line.subSequence(0, 11).equals(this.dateEnd) && this.onEndDay) { break; }
+                if (line.substring(0, 11).equals(this.dateEnd)) { onEndDay = true; }
+                else if (!line.substring(0, 11).equals(this.dateEnd) && onEndDay) { break; }
             }
 
             fileIn.close(); 
