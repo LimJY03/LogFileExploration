@@ -25,7 +25,6 @@ public class FindAvgExecTime {
             ArrayList<Integer> uniqueJobID = new ArrayList<>();
             LinkedHashMap<Integer, String> startJobIdLines = new LinkedHashMap<>();
             LinkedHashMap<Integer, String> endJobIdLines = new LinkedHashMap<>();
-            // ArrayList<String> endJobIdLines = new ArrayList<>(Files.readAllLines(Paths.get("./data_filtered/end_job.txt")));
             
             Pattern jobIdPattern = Pattern.compile("JobId=(\\d+)");
             Pattern timePattern = Pattern.compile("(\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d.\\d\\d\\d)");  
@@ -64,7 +63,7 @@ public class FindAvgExecTime {
             for (int key: startJobIdLines.keySet()) {
 
                 if (endJobIdLines.containsKey(key)) {
-
+                    
                     LocalDateTime startTime = null, endTime = null;
                     Matcher timeMatcher;
     
@@ -81,43 +80,7 @@ public class FindAvgExecTime {
                     completedJobCount++;  
                 }
             }
-            
-            
-            // Calculate average execution time
-            // for (String startJobIdLine : startJobIdLines) {
-                
-            //     for (String endJobIdLine : endJobIdLines) {
-                    
-            //         Matcher startJobIdMatcher = jobIdPattern.matcher(startJobIdLine);
-            //         Matcher endJobIdMatcher = jobIdPattern.matcher(endJobIdLine);
 
-            //         if (startJobIdMatcher.find() && endJobIdMatcher.find()) {
-
-            //             int startJobId = Integer.parseInt(startJobIdMatcher.group(1));
-            //             int endJobId = Integer.parseInt(endJobIdMatcher.group(1));
-
-            //             if (startJobId == endJobId) {
-
-            //                 LocalDateTime startTime = null, endTime = null;
-            //                 Matcher timeMatcher;
-
-            //                 timeMatcher = timePattern.matcher(startJobIdLine);
-            //                 if (timeMatcher.find()) { startTime = LocalDateTime.parse(timeMatcher.group(1), formatter); }
-
-            //                 timeMatcher = timePattern.matcher(endJobIdLine);
-            //                 if (timeMatcher.find()) { endTime = LocalDateTime.parse(timeMatcher.group(1), formatter); }
-                            
-            //                 long duration = java.time.Duration.between(startTime, endTime).toMillis();
-            //                 totalDuration += duration;
-            //                 timeRawOut.println(duration);
-
-            //                 completedJobCount++;                            
-            //                 break;
-            //             }
-            //         }                 
-            //     }
-            // }               
-            
             if (completedJobCount > 0) {
                 fileOut.printf(
                     "Average Execution Time:\n%s\nTotal Jobs Completed: %s", 
