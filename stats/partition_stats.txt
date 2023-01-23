@@ -1,6 +1,6 @@
-cpu-opteron: 4920 jobs executed, used 21648828 ms on average.
-cpu-epyc:    3015 jobs executed, used 21732817 ms on average.
-gpu-k10:     439  jobs executed, used 30569928 ms on average.
-gpu-k40c:    301  jobs executed, used 36600391 ms on average.
-gpu-titan:   673  jobs executed, used 17266381 ms on average.
-gpu-v100s:   618  jobs executed, used 26011646 ms on average.
+cpu-opteron: 4920 jobs executed, used 27095455 ms on average.
+cpu-epyc:    3015 jobs executed, used 26865290 ms on average.
+gpu-k10:     439  jobs executed, used 38343424 ms on average.
+gpu-k40c:    301  jobs executed, used 43372904 ms on average.
+gpu-titan:   673  jobs executed, used 23194161 ms on average.
+gpu-v100s:   618  jobs executed, used 32940978 ms on average.
