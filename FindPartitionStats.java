@@ -48,12 +48,12 @@ public class FindPartitionStats {
                 else if (line.contains("gpu-v100s")) { gpuV100s_totalTime += Long.parseLong(line.split(" ")[1]); gpuV100s_completedCount++; }
             }
 
-            outputStream.printf("cpu-opteron: %-4s jobs executed, used %s ms on average.\n", cpuOpteronCount, cpuOpteron_totalTime / cpuOpteron_completedCount);
-            outputStream.printf("cpu-epyc:    %-4s jobs executed, used %s ms on average.\n", cpuEpycCount, cpuEpyc_totalTime / cpuEpyc_completedCount);
-            outputStream.printf("gpu-k10:     %-4s jobs executed, used %s ms on average.\n", gpuK10Count, gpuK10_totalTime / gpuK10_completedCount);
-            outputStream.printf("gpu-k40c:    %-4s jobs executed, used %s ms on average.\n", gpuK40cCount, gpuK40c_totalTime / gpuK40c_completedCount);
-            outputStream.printf("gpu-titan:   %-4s jobs executed, used %s ms on average.\n", gpuTitanCount, gpuTitan_totalTime / gpuTitan_completedCount);
-            outputStream.printf("gpu-v100s:   %-4s jobs executed, used %s ms on average.\n", gpuV100sCount, gpuV100s_totalTime / gpuV100s_completedCount);
+            outputStream.printf("cpu-opteron: %d jobs executed, used %s ms on average.\n", cpuOpteronCount, cpuOpteron_totalTime / cpuOpteron_completedCount);
+            outputStream.printf("cpu-epyc: %d jobs executed, used %s ms on average.\n", cpuEpycCount, cpuEpyc_totalTime / cpuEpyc_completedCount);
+            outputStream.printf("gpu-k10: %d jobs executed, used %s ms on average.\n", gpuK10Count, gpuK10_totalTime / gpuK10_completedCount);
+            outputStream.printf("gpu-k40c: %d jobs executed, used %s ms on average.\n", gpuK40cCount, gpuK40c_totalTime / gpuK40c_completedCount);
+            outputStream.printf("gpu-titan: %d jobs executed, used %s ms on average.\n", gpuTitanCount, gpuTitan_totalTime / gpuTitan_completedCount);
+            outputStream.printf("gpu-v100s: %d jobs executed, used %s ms on average.\n", gpuV100sCount, gpuV100s_totalTime / gpuV100s_completedCount);
             
             inputStream.close();
             inputNodeData.close();
